@@ -23,3 +23,7 @@ function loadCourses(){
     return [];
 }
 
+//Sparar kurser till localStorage
+function saveCourses(courses: CourseInfo[]): void{
+    localStorage.setItem("courses", JSON.stringify(courses));
+}
