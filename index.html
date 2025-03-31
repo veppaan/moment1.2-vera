@@ -6,6 +6,30 @@
     <title>Moment 1.2</title>
 </head>
 <body>
+    <h1>Kurser</h1>
+    <h2>Lägg till kurser</h2>
+    <form id="form-courses">
+        <label for="code">Kurskod:</label>
+        <input type="text" id="code" required>
+
+        <label for="name">Kursnamn:</label>
+        <input type="text" id="name" required>
+
+        <label for="progression">Progression:</label>
+        <select id="progression">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+
+        <label for="syllabus">URL till kursplan:</label>
+        <input type="url" id="syllabus" required>
+
+        <button type="submit">Lägg till kurs</button>
+    </form>
+
+    <h3>Inlagda kurser</h3>
+    <ul id="course-list"></ul>
     
 </body>
 </html>
