@@ -12,3 +12,14 @@ let codeValue = document.getElementById("code") as HTMLInputElement;
 let nameValue = document.getElementById("name") as HTMLInputElement;
 let progressionValue = document.getElementById("progression") as HTMLSelectElement;
 let syllasbusValue = document.getElementById("syllabus") as HTMLInputElement;
+let courses: CourseInfo[] = loadCourses();
+
+//Ladda in inlagda kurser
+function loadCourses(){
+    let courses: string | null = localStorage.getItem("courses");
+    if (courses){
+        return JSON.parse(courses) as CourseInfo[];
+    }
+    return [];
+}
+
