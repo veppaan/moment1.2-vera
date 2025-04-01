@@ -1,14 +1,16 @@
 {
   "name": "moment1.2-vera",
+  "description": "Laboration 1.2 TypeScript",
   "version": "1.0.0",
-  "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/veppaan/moment1.2-vera.git"
   },
+  "browserlist": "> 0.5%, last versions, not dead",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,8 +18,8 @@
     "url": "https://github.com/veppaan/moment1.2-vera/issues"
   },
   "homepage": "https://github.com/veppaan/moment1.2-vera#readme",
-  "description": "",
   "devDependencies": {
-    "parcel": "^2.14.4"
+    "parcel": "^2.14.4",
+    "sass": "^1.86.1"
   }
 }
