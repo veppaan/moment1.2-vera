@@ -2,6 +2,7 @@
   "name": "moment1.2-vera",
   "description": "Laboration 1.2 TypeScript",
   "version": "1.0.0",
+  "source": "src/index.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/veppaan/moment1.2-vera#readme",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.14.4",
     "parcel": "^2.14.4",
     "sass": "^1.86.1"
   }

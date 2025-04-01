@@ -33,11 +33,11 @@ function loadCourses(){
     let courses: string | null = localStorage.getItem("courses");
     if (courses){
         return JSON.parse(courses) as CourseInfo[];
-    }else{
+    }/* else{
         if(emptyTxt){
             emptyTxt.innerHTML= "Listan är tom";
         }
-    }
+    } */
     return [];
 }
 

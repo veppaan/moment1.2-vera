@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(174, 213, 237);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#form-courses{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    border: 2px #ddd;
+    width: 150px;
+    height: 25px;
+    border-radius: 6px;
+    margin-bottom: 1.5em;
+}
+select{
+    margin-bottom: 1.5em;
+    width: 60px;
+    height: 60px;
+}
+label{
+    font-size: 1.1em;
+    font-weight: 300;
+}
+h1{
+    font-weight: 600;
+}
+h2{
+    font-size: 1.3em;
+    font-weight: 500;
+}
