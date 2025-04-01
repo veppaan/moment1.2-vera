@@ -49,4 +49,14 @@ form.addEventListener("submit", (event):void =>{
     courses.push(newCourse);
     saveCourses(courses);
     form.reset();
+
 })
+//Skriver ut kurser i list-format
+function printCourses(): void{
+    courseList.innerHTML="";
+    courses.forEach((course: CourseInfo) : void =>{
+        let li = document.createElement("li") as HTMLLIElement;
+        li.innerHTML = `${course.code} - ${course.name} (${course.progression}) <a href="${course.syllabus}">Länk till kursplan</a>`;
+        courseList.appendChild(li);
+    })
+}
