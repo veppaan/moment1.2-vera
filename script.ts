@@ -46,4 +46,7 @@ form.addEventListener("submit", (event):void =>{
             return
         }
     });
+    courses.push(newCourse);
+    saveCourses(courses);
+    form.reset();
 })
