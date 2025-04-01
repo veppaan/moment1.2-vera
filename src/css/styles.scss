@@ -12,28 +12,10 @@ body{
     justify-content: center;
     align-items: center;
 }
-input{
-    border: 2px #ddd;
-    width: 150px;
-    height: 25px;
-    border-radius: 6px;
-    margin-bottom: 1.5em;
-}
 select{
     margin-bottom: 1.5em;
     width: 60px;
     height: 60px;
-}
-label{
-    font-size: 1.1em;
-    font-weight: 300;
-}
-h1{
-    font-weight: 600;
-}
-h2{
-    font-size: 1.3em;
-    font-weight: 500;
 }
 li{
     background-color: rgba(12, 12, 114, 0.624);
@@ -52,12 +34,14 @@ li{
     width: fit-content;
     height: 3em;
     border-radius: 8px;
+    padding: 0 0.8em;
 }
 #add{
     border: none;
     color: white;
     background-color: darkblue;
     width: fit-content;
+    padding: 0 0.8em;
     height: 3em;
     border-radius: 8px;
 }
@@ -72,5 +56,44 @@ li{
 @media (max-width: 800px){
     li{
         font-size: 0.8em;
+    }
+    h1{
+        font-size: 1.7em;
+        font-weight: 600;
+    }
+    h2{
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+    label{
+        font-size: 1em;
+        font-weight: 300;
+    }
+    input{
+        border: 2px #ddd;
+        width: 150px;
+        height: 25px;
+        border-radius: 6px;
+        margin-bottom: 1.5em;
+    }
+}
+@media (min-width: 801px){
+    h1{
+        font-weight: 600;
+    }
+    h2{
+        font-size: 1.3em;
+        font-weight: 500;
+    }
+    label{
+        font-size: 1.1em;
+        font-weight: 300;
+    }
+    input{
+        border: 2px #ddd;
+        width: 250px;
+        height: 30px;
+        border-radius: 6px;
+        margin-bottom: 1.5em;
     }
 }
