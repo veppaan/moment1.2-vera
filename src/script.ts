@@ -15,7 +15,7 @@ let syllasbusValue = document.getElementById("syllabus") as HTMLInputElement;
 let courses: CourseInfo[] = loadCourses();
 
 
-let emptyTxt = document.getElementById("empty-text") as HTMLParagraphElement;
+
 let clearBtn = document.getElementById("clearbutton") as HTMLButtonElement;
 
 clearBtn.addEventListener("click", clearStorage);
@@ -33,11 +33,7 @@ function loadCourses(){
     let courses: string | null = localStorage.getItem("courses");
     if (courses){
         return JSON.parse(courses) as CourseInfo[];
-    }/* else{
-        if(emptyTxt){
-            emptyTxt.innerHTML= "Listan är tom";
-        }
-    } */
+    }
     return [];
 }
 
