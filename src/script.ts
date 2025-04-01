@@ -29,7 +29,6 @@ function init(){
 
 //Ladda in inlagda kurser
 function loadCourses(){
-    console.log("laddar kurser");
     let courses: string | null = localStorage.getItem("courses");
     if (courses){
         return JSON.parse(courses) as CourseInfo[];
@@ -39,13 +38,11 @@ function loadCourses(){
 
 //Sparar kurser till localStorage
 function saveCourses(courses: CourseInfo[]): void{
-    console.log("lagrar i storage");
     localStorage.setItem("courses", JSON.stringify(courses));
 }
 
 //Eventlyssnare
 form.addEventListener("submit", (event): void =>{
-    console.log("lägger till kurs");
     event.preventDefault();
 
     //Objekt för ny kurs
@@ -69,7 +66,6 @@ form.addEventListener("submit", (event): void =>{
 });
 //Skriver ut kurser i list-format
 function printCourses(): void{
-    console.log("skriver ut");
     courseList.innerHTML="";
     courses.forEach((course: CourseInfo): void => {
         let li = document.createElement("li") as HTMLLIElement;
@@ -79,7 +75,6 @@ function printCourses(): void{
 }
 
 function clearStorage(): void{
-    console.log("rensar");
     localStorage.clear();
     courseList.innerHTML = "";
     loadCourses();
