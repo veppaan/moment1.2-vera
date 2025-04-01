@@ -1,8 +1,8 @@
 interface CourseInfo{
-    code: string,
-    name: string,
-    progression: "A" | "B" | "C",
-    syllabus: string
+    code: string;
+    name: string;
+    progression: "A" | "B" | "C";
+    syllabus: string;
 }
 
 //Variabler
@@ -13,14 +13,24 @@ let nameValue = document.getElementById("name") as HTMLInputElement;
 let progressionValue = document.getElementById("progression") as HTMLSelectElement;
 let syllasbusValue = document.getElementById("syllabus") as HTMLInputElement;
 let courses: CourseInfo[] = loadCourses();
+printCourses();
+
+let emptyTxt = document.getElementById("empty-text") as HTMLParagraphElement;
+let clearBtn = document.getElementById("clearbutton") as HTMLButtonElement;
+
+clearBtn.addEventListener("click", clearStorage);
+
+
 
 //Ladda in inlagda kurser
 function loadCourses(){
     let courses: string | null = localStorage.getItem("courses");
     if (courses){
         return JSON.parse(courses) as CourseInfo[];
+    }else{
+        emptyTxt.innerHTML= "Listan är tom";
+        return [];
     }
-    return [];
 }
 
 //Sparar kurser till localStorage
@@ -49,7 +59,7 @@ form.addEventListener("submit", (event):void =>{
     courses.push(newCourse);
     saveCourses(courses);
     form.reset();
-
+    printCourses();
 })
 //Skriver ut kurser i list-format
 function printCourses(): void{
@@ -59,4 +69,10 @@ function printCourses(): void{
         li.innerHTML = `${course.code} - ${course.name} (${course.progression}) <a href="${course.syllabus}">Länk till kursplan</a>`;
         courseList.appendChild(li);
     })
+}
+
+function clearStorage(): void{
+    localStorage.clear();
+    courseList.innerHTML = "";
+    loadCourses();
 }
