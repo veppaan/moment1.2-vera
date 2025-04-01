@@ -27,3 +27,23 @@ function loadCourses(){
 function saveCourses(courses: CourseInfo[]): void{
     localStorage.setItem("courses", JSON.stringify(courses));
 }
+
+//Eventlyssnare
+form.addEventListener("submit", (event):void =>{
+    event.preventDefault();
+
+    //Objekt för ny kurs
+    const newCourse: CourseInfo = {
+        code: codeValue.value,
+        name: nameValue.value,
+        progression: progressionValue.value as "A" | "B" | "C",
+        syllabus: syllasbusValue.value
+    }
+    //Koll så att inte samma kurs läggs in två gånger
+    courses.forEach((course: CourseInfo): void => {
+        if(course.code === newCourse.code){
+            alert("Kursen måste vara unik!")
+            return
+        }
+    });
+})
