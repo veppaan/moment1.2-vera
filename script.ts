@@ -13,7 +13,7 @@ let nameValue = document.getElementById("name") as HTMLInputElement;
 let progressionValue = document.getElementById("progression") as HTMLSelectElement;
 let syllasbusValue = document.getElementById("syllabus") as HTMLInputElement;
 let courses: CourseInfo[] = loadCourses();
-printCourses();
+
 
 let emptyTxt = document.getElementById("empty-text") as HTMLParagraphElement;
 let clearBtn = document.getElementById("clearbutton") as HTMLButtonElement;
@@ -24,6 +24,7 @@ window.onload = init;
 
 function init(){
     loadCourses();
+    printCourses();
 }
 
 //Ladda in inlagda kurser
@@ -33,7 +34,9 @@ function loadCourses(){
     if (courses){
         return JSON.parse(courses) as CourseInfo[];
     }else{
-        emptyTxt.innerHTML= "Listan är tom";
+        if(emptyTxt){
+            emptyTxt.innerHTML= "Listan är tom";
+        }
     }
     return [];
 }
@@ -76,7 +79,7 @@ function printCourses(): void{
         let li = document.createElement("li") as HTMLLIElement;
         li.innerHTML = `${course.code} - ${course.name} (${course.progression}) <a href="${course.syllabus}">Länk till kursplan</a>`;
         courseList.appendChild(li);
-    })
+    });
 }
 
 function clearStorage(): void{
